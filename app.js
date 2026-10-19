@@ -10,7 +10,7 @@
   function cardHTML(work) {
     return (
       '<article class="card" tabindex="0" data-slug="' + work.slug + '">' +
-        '<img src="thumbs/' + work.slug + '.jpg" alt="' + escapeHTML(work.title) + '" loading="lazy">' +
+        '<img src="' + work.slug + '.jpg" alt="' + escapeHTML(work.title) + '" loading="lazy">' +
         '<div class="card-body">' +
           '<div class="medium">' + escapeHTML(work.medium) + '</div>' +
           '<h2>' + escapeHTML(work.title) + '</h2>' +
@@ -85,7 +85,7 @@
 
   function showCurrent() {
     var work = visibleWorks[currentIndex];
-    lbImg.src = "images/" + work.slug + ".jpg";
+    lbImg.src = work.slug + ".jpg";
     lbImg.alt = work.title;
     lbTitle.textContent = work.title;
     lbMeta.textContent = work.medium + " · " + work.note;
