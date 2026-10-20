@@ -170,6 +170,39 @@ footer .fine { font-size: 0.78rem; margin-top: 0.4rem; opacity: 0.75; }
 .lightbox figcaption h3 { font-family: "Fraunces", serif; font-weight: 500; font-size: 1.35rem; }
 .lightbox figcaption p { color: var(--ink-dim); font-size: 0.9rem; margin-top: 0.25rem; }
 
+.lb-desc-toggle {
+  position: static;
+  width: auto;
+  height: auto;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-family: "Inter", system-ui, sans-serif;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.45rem 1.1rem;
+  margin-top: 0.9rem;
+  color: var(--accent);
+  border-color: #4a3f2c;
+}
+.lb-desc-toggle:hover { background: rgba(216, 178, 110, 0.12); border-color: var(--accent); }
+.lb-desc-toggle[aria-expanded="true"] { background: var(--accent); color: #141414; border-color: var(--accent); }
+
+.lb-desc {
+  max-width: 38rem;
+  margin: 1rem auto 0;
+  text-align: left;
+  border-top: 1px solid var(--line);
+  padding-top: 1rem;
+  max-height: 32vh;
+  overflow-y: auto;
+}
+.lb-desc p {
+  color: var(--ink-dim);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  margin-top: 0;
+}
+
 .lightbox button {
   position: absolute;
   background: transparent;

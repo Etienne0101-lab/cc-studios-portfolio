@@ -71,7 +71,19 @@
   var lbImg = document.getElementById("lbImg");
   var lbTitle = document.getElementById("lbTitle");
   var lbMeta = document.getElementById("lbMeta");
+  var lbDescToggle = document.getElementById("lbDescToggle");
+  var lbDesc = document.getElementById("lbDesc");
+  var lbDescText = document.getElementById("lbDescText");
   var currentIndex = -1;
+
+  function setDesc(open) {
+    lbDesc.hidden = !open;
+    lbDescToggle.setAttribute("aria-expanded", open ? "true" : "false");
+  }
+
+  lbDescToggle.addEventListener("click", function () {
+    setDesc(lbDesc.hidden);
+  });
 
   function openLightbox(slug) {
     var idx = visibleWorks.findIndex(function (w) { return w.slug === slug; });
@@ -89,6 +101,14 @@
     lbImg.alt = work.title;
     lbTitle.textContent = work.title;
     lbMeta.textContent = work.medium + " · " + work.note;
+    if (work.description) {
+      lbDescText.textContent = work.description;
+      lbDescToggle.hidden = false;
+      setDesc(false);
+    } else {
+      lbDescToggle.hidden = true;
+      setDesc(false);
+    }
   }
 
   function step(dir) {
