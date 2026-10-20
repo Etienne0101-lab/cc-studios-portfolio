@@ -7,7 +7,7 @@ window.WORKS = {
     {
      "slug": "floral-muse",
      "title": "Floral Muse",
-     "medium": "AI-generated artwork",
+     "medium": "Digital artwork",
      "note": "Porcelain portrait wrapped in white roses."
     },
     {
@@ -31,7 +31,7 @@ window.WORKS = {
     {
      "slug": "drip-muse",
      "title": "Drip Muse",
-     "medium": "AI-generated artwork",
+     "medium": "Digital artwork",
      "note": "Neon paint-drip portrait on black."
     },
     {
@@ -49,25 +49,25 @@ window.WORKS = {
     {
      "slug": "paper-bloom",
      "title": "Paper Bloom",
-     "medium": "AI-generated artwork",
+     "medium": "Digital artwork",
      "note": "Paper-quilling portrait in copper and teal."
     },
     {
      "slug": "metamorphosis",
      "title": "Metamorphosis",
-     "medium": "AI-generated artwork",
+     "medium": "Digital artwork",
      "note": "Floral profile portrait with butterflies."
     },
     {
      "slug": "current",
      "title": "Current",
-     "medium": "AI-generated artwork",
+     "medium": "Digital artwork",
      "note": "A face surfacing from swirling color."
     },
     {
      "slug": "wired-bloom",
      "title": "Wired Bloom",
-     "medium": "AI-generated artwork",
+     "medium": "Digital artwork",
      "note": "Wire-and-blossom sculptural profile at sunset."
     },
     {
@@ -79,13 +79,13 @@ window.WORKS = {
     {
      "slug": "roses-at-dusk",
      "title": "Roses at Dusk",
-     "medium": "AI-generated artwork",
+     "medium": "Digital artwork",
      "note": "Painterly still life, roses by candlelight."
     },
     {
      "slug": "symphony-in-glass",
      "title": "Symphony in Glass",
-     "medium": "AI-generated artwork",
+     "medium": "Digital artwork",
      "note": "Crystal apple wrapped in a golden score."
     }
    ]
@@ -127,7 +127,7 @@ window.WORKS = {
     {
      "slug": "iridescence",
      "title": "Iridescence",
-     "medium": "AI-generated artwork",
+     "medium": "Digital artwork",
      "note": "Iridescent orb over a mirrored cosmic sea."
     },
     {
@@ -163,7 +163,7 @@ window.WORKS = {
     {
      "slug": "ember-tree",
      "title": "Ember Tree",
-     "medium": "AI-generated artwork",
+     "medium": "Digital artwork",
      "note": "Abstract tree blazing in red and gold."
     }
    ]
