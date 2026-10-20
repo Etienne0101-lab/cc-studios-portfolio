@@ -5,7 +5,25 @@
   var gallery = document.getElementById("gallery");
   var filtersEl = document.getElementById("filters");
   var activeFilter = "all";
+  var activeView = "overview";
   var visibleWorks = [];
+
+  function validFilter(id) {
+    if (id === "all") return true;
+    return data.collections.some(function (c) { return c.id === id; });
+  }
+
+  try {
+    var saved = JSON.parse(localStorage.getItem("cc-studios-prefs") || "{}");
+    if (saved.view === "editorial" || saved.view === "overview") activeView = saved.view;
+    if (saved.filter && validFilter(saved.filter)) activeFilter = saved.filter;
+  } catch (e) { /* private mode etc. — fall back to defaults */ }
+
+  function savePrefs() {
+    try {
+      localStorage.setItem("cc-studios-prefs", JSON.stringify({ view: activeView, filter: activeFilter }));
+    } catch (e) { /* ignore */ }
+  }
 
   function cardHTML(work) {
     return (
@@ -29,9 +47,9 @@
   }
 
   function renderFilters() {
-    var html = '<button type="button" data-filter="all" aria-pressed="true">All work</button>';
+    var html = '<button type="button" data-filter="all" aria-pressed="' + (activeFilter === "all") + '">All work</button>';
     data.collections.forEach(function (col) {
-      html += '<button type="button" data-filter="' + col.id + '" aria-pressed="false">' +
+      html += '<button type="button" data-filter="' + col.id + '" aria-pressed="' + (activeFilter === col.id) + '">' +
         escapeHTML(col.title) + '</button>';
     });
     filtersEl.innerHTML = html;
@@ -48,7 +66,24 @@
       b.setAttribute("aria-pressed", b.getAttribute("data-filter") === id ? "true" : "false");
     });
     renderGallery();
+    savePrefs();
   }
+
+  /* ---------- View toggle (overview / editorial) ---------- */
+  var viewButtons = Array.prototype.slice.call(document.querySelectorAll(".view-toggle button"));
+
+  function setView(v) {
+    activeView = v;
+    viewButtons.forEach(function (b) {
+      b.setAttribute("aria-pressed", b.getAttribute("data-view") === v ? "true" : "false");
+    });
+    gallery.classList.toggle("editorial", v === "editorial");
+    savePrefs();
+  }
+
+  viewButtons.forEach(function (b) {
+    b.addEventListener("click", function () { setView(b.getAttribute("data-view")); });
+  });
 
   function renderGallery() {
     visibleWorks = [];
@@ -152,4 +187,5 @@
 
   renderFilters();
   renderGallery();
+  setView(activeView);
 })();
